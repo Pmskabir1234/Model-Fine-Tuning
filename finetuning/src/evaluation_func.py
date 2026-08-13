@@ -31,4 +31,4 @@ result = evaluate_prediction(prediction,
                              expected_intent='password_intent',
                              expected_priority='high')
 
-print(result)
+# print(result)

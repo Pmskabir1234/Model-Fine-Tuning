@@ -1,7 +1,7 @@
 ALLOWED_INTENTS = {
     "password_reset",
     "billing_issue",
-    "account_aompromise",
+    "account_compromise",
     "refund_request",
     "technical_problem",
     "feature_request",
