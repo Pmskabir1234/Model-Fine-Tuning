@@ -1,0 +1,13 @@
+{
+    "experiment_id": "exp_02_lora_r8",
+    "model": "HuggingFaceTB/SmolLM2-135M-Instruct",
+    "method": "lora",
+    "r": 8,
+    "lora_alpha": 16,
+    "lora_dropout": 0.05,
+    "target_modules": ["q_proj","v_proj"],
+    "learning_rate": 0.0002,
+    "seed": 42,
+    "epochs": 3,
+    "batch_size": 3
+}
