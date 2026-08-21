@@ -23,12 +23,3 @@ def evaluate_prediction(
         "priority_correct":priority_correct
     }
 
-prediction = """INTENT: password_reset
-PRIORITY: medium
-ACTION: Provide password reset instructions"""
-
-result = evaluate_prediction(prediction,
-                             expected_intent='password_intent',
-                             expected_priority='high')
-
-print(result)
