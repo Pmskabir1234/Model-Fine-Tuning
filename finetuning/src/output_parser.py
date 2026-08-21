@@ -38,9 +38,9 @@ def parse_output(text):
 
     return result
         
-text = """INTENT: password_reset
-PRIORITY: medium
-ACTION: Provide password reset instructions"""
+# text = """INTENT: password_reset
+# PRIORITY: medium
+# ACTION: Provide password reset instructions"""
 
 
 def valdating_priority(response : dict) -> bool:
@@ -49,7 +49,7 @@ def valdating_priority(response : dict) -> bool:
 def validating_intents(response: dict) -> bool:
     return response['intent'] in ALLOWED_INTENTS
 
-x = parse_output(text)
+# x = parse_output(text)
 # print(x,end='\n')
 # print(valdating_priority(x))
 # print(validating_intents(x))

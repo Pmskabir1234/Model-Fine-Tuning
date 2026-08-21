@@ -4,8 +4,8 @@ library_name: transformers
 model_name: exp_02_lora_r8
 tags:
 - generated_from_trainer
-- sft
 - trl
+- sft
 licence: license
 ---
 
