@@ -1,0 +1,11 @@
+{
+    "Total Samples":  87,
+    "Total valid formats": 27,
+    "Valid Format Percentage(%)" : 0.31,
+    "Total correct intents": 22,
+    "Correct Intent Percentage(%)": 0.25,
+    "Total correct priorities": 31,
+    "Correct Priority Percentage(%)": 0.36,
+    "Macro F1 result for intents": 0.05,
+    "Macro F1 result for priorities": 0.35
+}

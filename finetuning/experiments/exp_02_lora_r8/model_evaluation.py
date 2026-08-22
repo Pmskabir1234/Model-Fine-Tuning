@@ -13,10 +13,11 @@ sys.path.insert(0, str(SRC_DIR))
 
 from src import task_definition
 from src import output_parser
-from src.evaluation_func import evaluate_prediction
+from src.evaluation_func import evaluate_prediction,  evaluate_macro_f1
 import json
 
 EVAL_DATA = Path(__file__).resolve().parent / "eval_pred.jsonl"
+
 
 with open(EVAL_DATA, 'r') as f:
     pred_samples = list(map(json.loads, f.readlines()))
@@ -34,9 +35,16 @@ for sample in pred_samples:
     if details['priority_correct']:
             correct_priority += 1
 
+predictions = [s['prediction'] for s in pred_samples]
+expected_intents = [s['expected_intent'] for s in pred_samples]
+expected_priorities = [s['expected_priority'] for s in pred_samples]
+
+macro_f1_result = evaluate_macro_f1(predictions, expected_intents, expected_priorities)
+
 print('Total Samples: ', len(pred_samples))
 print(f'Total valid formats: {correct_format} Percentage(%): {round(correct_format/len(pred_samples),2)}')
 print(f'Total correct intents: {correct_intent} Percentage(%): {round(correct_intent/len(pred_samples),2)}')
-print(f'Total valid formats: {correct_priority} Percentage(%): {round(correct_priority/len(pred_samples),2)}')
-
+print(f'Total valid priorities: {correct_priority} Percentage(%): {round(correct_priority/len(pred_samples),2)}')
+print(f'Macro F1 result for intents: {round(macro_f1_result['intent_macro_f1'],2)}')
+print(f'Macro F1 result for priorities: {round(macro_f1_result['priority_macro_f1'],2)}')
     
